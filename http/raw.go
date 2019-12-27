@@ -6,6 +6,8 @@ import (
 	"net/url"
 	"path/filepath"
 	"strings"
+	"log"
+
 
 	"github.com/filebrowser/filebrowser/v2/files"
 	"github.com/filebrowser/filebrowser/v2/users"
@@ -56,6 +58,7 @@ func parseQueryAlgorithm(r *http.Request) (string, archiver.Writer, error) {
 }
 
 var rawHandler = withUser(func(w http.ResponseWriter, r *http.Request, d *data) (int, error) {
+	log.Printf("[Flie Download] User:" + d.user.Username + ", Path: " + r.URL.Path + "\n\n")
 	if !d.user.Perm.Download {
 		return http.StatusAccepted, nil
 	}
