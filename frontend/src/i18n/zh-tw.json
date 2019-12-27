@@ -84,6 +84,7 @@
     "usernameTaken": "用戶名已存在",
     "signup": "註冊",
     "username": "帳號",
+    "email": "",
     "wrongCredentials": "帳號或密碼錯誤"
   },
   "prompts": {

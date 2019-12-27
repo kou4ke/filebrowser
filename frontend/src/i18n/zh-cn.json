@@ -84,6 +84,7 @@
     "usernameTaken": "用户名已经被使用",
     "signup": "注册",
     "username": "用户名",
+    "email": "",
     "wrongCredentials": "用户名或密码错误"
   },
   "prompts": {

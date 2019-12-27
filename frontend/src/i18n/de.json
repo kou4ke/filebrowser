@@ -84,6 +84,7 @@
     "usernameTaken": "Benutzername ist bereits vergeben",
     "signup": "Registrieren",
     "username": "Benutzername",
+    "email": "",
     "wrongCredentials": "Falsche Zugangsdaten"
   },
   "prompts": {

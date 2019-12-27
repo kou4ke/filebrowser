@@ -84,6 +84,7 @@
     "usernameTaken": "Användarnamn upptaget",
     "signup": "Registrera",
     "username": "Användarnamn",
+    "email": "",
     "wrongCredentials": "Fel inloggning"
   },
   "prompts": {

@@ -84,6 +84,7 @@
     "usernameTaken": "Username already taken",
     "signup": "Signup",
     "username": "Utilisateur",
+    "email": "",
     "wrongCredentials": "Identifiants incorrects !"
   },
   "prompts": {

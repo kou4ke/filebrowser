@@ -84,6 +84,7 @@
     "usernameTaken": "O nome de utilizador já está registado",
     "signup": "Registar",
     "username": "Nome de utilizador",
+    "email": "",
     "wrongCredentials": "Dados errados"
   },
   "prompts": {

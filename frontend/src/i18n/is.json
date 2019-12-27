@@ -84,6 +84,7 @@
     "usernameTaken": "Þetta norendanafn er þegar í notkun",
     "signup": "Nýskráning",
     "username": "Notendanafn",
+    "email": "",
     "wrongCredentials": "Rangar notendaupplýsingar"
   },
   "prompts": {

@@ -84,6 +84,7 @@
     "usernameTaken": "Gebruikersnaam reeds in gebruik",
     "signup": "Registeren",
     "username": "Gebruikersnaam",
+    "email": "",
     "wrongCredentials": "Verkeerde inloggegevens"
   },
   "prompts": {

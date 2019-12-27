@@ -84,6 +84,7 @@
     "usernameTaken": "Utilizatorul există",
     "signup": "Înregistrare",
     "username": "Utilizator",
+    "email": "",
     "wrongCredentials": "Informații greșite"
   },
   "prompts": {

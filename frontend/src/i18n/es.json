@@ -84,6 +84,7 @@
     "usernameTaken": "Nombre usuario no disponible",
     "signup": "Registrate",
     "username": "Usuario",
+    "email": "",
     "wrongCredentials": "Usuario y/o contraseña incorrectos"
   },
   "prompts": {
