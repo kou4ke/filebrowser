@@ -33,6 +33,8 @@ type User struct {
 	Sorting      files.Sorting `json:"sorting"`
 	Fs           afero.Fs      `json:"-" yaml:"-"`
 	Rules        []rules.Rule  `json:"rules"`
+	Email        string        `json:"email"`
+	Spacename    string        `json:"Spacename"`
 }
 
 // GetRules implements rules.Provider.
@@ -48,6 +50,8 @@ var checkableFields = []string{
 	"Commands",
 	"Sorting",
 	"Rules",
+	"Email",
+	"Spacename",
 }
 
 // Clean cleans up a user and verifies if all its fields

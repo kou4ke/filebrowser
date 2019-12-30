@@ -106,6 +106,8 @@ var loginHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, e
 type signupBody struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
+	Email string `json:"email"`
+	Spacename string `json:"spacename"`
 }
 
 var signupHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, error) {
@@ -139,6 +141,8 @@ var signupHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, 
 	}
 
 	user.Password = pwd
+	user.Email = info.Email
+	user.Spacename = info.Spacename
 
 	userHome, err := d.settings.MakeUserDir(user.Username, user.Scope, d.server.Root)
 	if err != nil {

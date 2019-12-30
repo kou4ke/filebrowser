@@ -68,8 +68,8 @@ export async function renew (jwt) {
   }
 }
 
-export async function signup (username, password) {
-  const data = { username, password }
+export async function signup (username, password, email, spacename) {
+  const data = { username, password ,email, spacename}
 
   const res = await fetch(`${baseURL}/api/signup`, {
     method: 'POST',

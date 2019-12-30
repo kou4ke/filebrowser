@@ -9,6 +9,7 @@
       <input class="input input--block" type="password" v-model="password" :placeholder="$t('login.password')">
       <input class="input input--block" v-if="createMode" type="password" v-model="passwordConfirm" :placeholder="$t('login.passwordConfirm')">
       <input class="input input--block" v-if="createMode" type="email" v-model="email" :placeholder="$t('login.email')" />
+      <input class="input input--block" v-if="createMode" type="text" v-model="spacename" :placeholder="$t('login.spacename')" />
 
       <div v-if="recaptcha" id="recaptcha"></div>
       <input class="button button--block" type="submit" :value="createMode ? $t('login.signup') : $t('login.submit')">
@@ -36,6 +37,7 @@ export default {
       username: '',
       password: '',
       email: '',
+      spacename: '',
       recaptcha: recaptcha,
       passwordConfirm: ''
     }
@@ -79,7 +81,7 @@ export default {
 
       try {
         if (this.createMode) {
-          await auth.signup(this.username, this.password)
+          await auth.signup(this.username, this.password, this.email, this.spacename)
         }
 
         await auth.login(this.username, this.password, captcha)
