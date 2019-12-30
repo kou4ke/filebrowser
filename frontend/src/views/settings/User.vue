@@ -89,8 +89,10 @@ export default {
           this.user = {
             ...defaults,
             username: '',
+            email: '',
             passsword: '',
             rules: [],
+            spacename: '',
             lockPassword: false,
             id: 0
           }

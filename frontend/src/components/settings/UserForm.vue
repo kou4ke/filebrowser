@@ -6,6 +6,11 @@
     </p>
 
     <p v-if="!isDefault">
+      <label for="email">{{ $t('settings.email') }}</label>
+      <input class="input input--block" type="email" v-model="user.email" id="email">
+    </p>
+
+    <p v-if="!isDefault">
       <label for="password">{{ $t('settings.password') }}</label>
       <input class="input input--block" type="password" :placeholder="passwordPlaceholder" v-model="user.password" id="password">
     </p>
@@ -13,6 +18,11 @@
     <p>
       <label for="scope">{{ $t('settings.scope') }}</label>
       <input class="input input--block" type="text" v-model="user.scope" id="scope">
+    </p>
+
+    <p v-if="!isDefault">
+      <label for="spacename">{{ $t('settings.spacename') }}</label>
+      <input class="input input--block" type="text" v-model="user.spacename" id="spacename">
     </p>
 
     <p>
