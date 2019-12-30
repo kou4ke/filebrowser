@@ -150,7 +150,7 @@ var signupHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, 
 		return http.StatusInternalServerError, err
 	}
 	user.Scope = userHome
-	log.Printf("new user: %s, home dir: [%s].", user.Username, userHome)
+	log.Printf("new user: %s, home dir: [%s], email: [%s], spacename [%s].", user.Username, userHome, user.Email, user.Spacename)
 
 	err = d.store.Users.Save(user)
 	if err == errors.ErrExist {
