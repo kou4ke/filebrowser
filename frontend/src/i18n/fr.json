@@ -85,6 +85,7 @@
     "signup": "Signup",
     "username": "Utilisateur",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Identifiants incorrects !"
   },
   "prompts": {

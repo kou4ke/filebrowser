@@ -85,6 +85,7 @@
     "signup": "Signup",
     "username": "Имя пользователя",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Неверные данные"
   },
   "prompts": {

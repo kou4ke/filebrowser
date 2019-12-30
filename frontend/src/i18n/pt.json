@@ -85,6 +85,7 @@
     "signup": "Registar",
     "username": "Nome de utilizador",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Dados errados"
   },
   "prompts": {

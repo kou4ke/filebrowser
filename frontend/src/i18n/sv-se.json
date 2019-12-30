@@ -85,6 +85,7 @@
     "signup": "Registrera",
     "username": "Användarnamn",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Fel inloggning"
   },
   "prompts": {

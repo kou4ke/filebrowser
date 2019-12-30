@@ -85,6 +85,7 @@
     "signup": "Registeren",
     "username": "Gebruikersnaam",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Verkeerde inloggegevens"
   },
   "prompts": {

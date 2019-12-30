@@ -85,6 +85,7 @@
     "signup": "注册",
     "username": "用户名",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "用户名或密码错误"
   },
   "prompts": {

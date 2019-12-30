@@ -85,6 +85,7 @@
     "signup": "Signup",
     "username": "ユーザ名",
     "email": "メールアドレス",
+    "spacename": "spacename",
     "wrongCredentials": "ユーザ名またはパスワードが間違っています。"
   },
   "prompts": {

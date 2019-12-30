@@ -85,6 +85,7 @@
     "signup": "Registrate",
     "username": "Usuario",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Usuario y/o contraseña incorrectos"
   },
   "prompts": {

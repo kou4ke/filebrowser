@@ -85,6 +85,7 @@
     "signup": "Înregistrare",
     "username": "Utilizator",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Informații greșite"
   },
   "prompts": {

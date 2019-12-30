@@ -85,6 +85,7 @@
     "signup": "Nýskráning",
     "username": "Notendanafn",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "Rangar notendaupplýsingar"
   },
   "prompts": {

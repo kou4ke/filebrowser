@@ -85,6 +85,7 @@
     "signup": "가입하기",
     "username": "사용자 이름",
     "email": "",
+    "spacename": "",
     "wrongCredentials": "사용자 이름 또는 비밀번호를 확인하십시오"
   },
   "prompts": {
