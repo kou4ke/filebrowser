@@ -34,7 +34,7 @@ type User struct {
 	Fs           afero.Fs      `json:"-" yaml:"-"`
 	Rules        []rules.Rule  `json:"rules"`
 	Email        string        `json:"email"`
-	Spacename    string        `json:"Spacename"`
+	Spacename    string        `json:"spacename"`
 }
 
 // GetRules implements rules.Provider.
