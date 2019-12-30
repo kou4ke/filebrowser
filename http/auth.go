@@ -98,6 +98,7 @@ var loginHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, e
 	} else if err != nil {
 		return http.StatusInternalServerError, err
 	} else {
+		log.Printf("[User Login] User: %d %s \n", user.ID, user.Username)
 		return printToken(w, r, d, user)
 	}
 }
