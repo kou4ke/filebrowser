@@ -46,7 +46,7 @@ var usersAddCmd = &cobra.Command{
 
 		userSpace, err := s2.MakeSpaceDir(user.Space, servSettings.Root)
 		checkErr(err)
-		if userSpace != "" {
+		if user.Space == "" {
 			user.Scope = userHome
 		} else {
 			user.Scope = userSpace

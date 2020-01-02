@@ -155,7 +155,7 @@ var signupHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, 
 		log.Printf("create user: failed to mkdir space dir: [%s]", userSpace)
 		return http.StatusInternalServerError, err
 	}
-	if userSpace != "" {
+	if user.Space == "" {
 		user.Scope = userHome
 	} else {
 		user.Scope = userSpace
