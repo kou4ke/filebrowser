@@ -11,10 +11,10 @@ func init() {
 }
 
 var usersAddCmd = &cobra.Command{
-	Use:   "add <username> <password>",
+	Use:   "add <username> <password> <email> <spacen>",
 	Short: "Create a new user",
 	Long:  `Create a new user and add it to the database.`,
-	Args:  cobra.ExactArgs(2),
+	Args:  cobra.ExactArgs(4),
 	Run: python(func(cmd *cobra.Command, args []string, d pythonData) {
 		s, err := d.store.Settings.Get()
 		checkErr(err)
@@ -26,6 +26,8 @@ var usersAddCmd = &cobra.Command{
 		user := &users.User{
 			Username:     args[0],
 			Password:     password,
+			Email:        args[2],
+			Space:        args[3],
 			LockPassword: mustGetBool(cmd.Flags(), "lockPassword"),
 		}
 
@@ -41,7 +43,14 @@ var usersAddCmd = &cobra.Command{
 
 		userHome, err := s2.MakeUserDir(user.Username, user.Scope, servSettings.Root)
 		checkErr(err)
-		user.Scope = userHome
+
+		userSpace, err := s2.MakeSpaceDir(user.Space, servSettings.Root)
+		checkErr(err)
+		if userSpace != "" {
+			user.Scope = userHome
+		} else {
+			user.Scope = userSpace
+		}
 
 		err = d.store.Users.Save(user)
 		checkErr(err)
