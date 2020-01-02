@@ -125,7 +125,18 @@ var userPostHandler = withAdmin(func(w http.ResponseWriter, r *http.Request, d *
 		log.Printf("create user: failed to mkdir user home dir: [%s]", userHome)
 		return http.StatusInternalServerError, err
 	}
-	req.Data.Scope = userHome
+
+	userSpace, err := d.settings.MakeSpaceDir(req.Data.Space, d.server.Root)
+	if err != nil {
+		log.Printf("create user: failed to mkdir space dir: [%s]", userSpace)
+		return http.StatusInternalServerError, err
+	}
+	if req.Data.Space == "" {
+	  req.Data.Scope = userHome
+	} else {
+	  req.Data.Scope = userSpace
+	}
+
 	log.Printf("user: %s, home dir: [%s].", req.Data.Username, userHome)
 
 	err = d.store.Users.Save(req.Data)
