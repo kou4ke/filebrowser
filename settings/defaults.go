@@ -9,6 +9,7 @@ import (
 // for some fields on User.
 type UserDefaults struct {
 	Scope    string            `json:"scope"`
+	Space    string            `json:"space"`
 	Locale   string            `json:"locale"`
 	ViewMode users.ViewMode    `json:"viewMode"`
 	Sorting  files.Sorting     `json:"sorting"`
