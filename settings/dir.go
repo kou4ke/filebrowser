@@ -73,3 +73,55 @@ func cleanUsername(s string) string {
 	s = dashes.ReplaceAllString(s, "-")
 	return s
 }
+
+// MakeSpaceDir makes the space directory according to settings.
+func (settings *Settings) MakeSpaceDir(userSpace, serverRoot string) (string, error) {
+	var err error
+	userSpace = strings.TrimSpace(userSpace)
+	if userSpace == "" || userSpace == "./" {
+		userSpace = "."
+	}
+
+	//if !settings.CreateUserDir {
+	//	return userScope, nil
+	//}
+
+	fs := afero.NewBasePathFs(afero.NewOsFs(), serverRoot)
+	afs := &afero.Afero{Fs: fs}
+
+	// Clean username first
+	spacename := cleanSpacename(userSpace)
+	if spacename == "" || spacename == "-" || spacename == "." {
+		log.Printf("create space: invalid space dir creation: [%s]", spacename)
+		return "", errors.New("invalid space dir creation")
+	}
+
+	// Create default user dir
+	spaceBase := settings.Defaults.Space + string(os.PathSeparator) + "spaces"
+	space := spaceBase + string(os.PathSeparator) + spacename
+	dirCheck, err := afs.DirExists(space)
+	if dirCheck {
+		log.Printf("create space dir: space dir is already exists: [%s]", space)
+	} else {
+		err = fs.MkdirAll(space, os.ModePerm)
+		if err != nil {
+			log.Printf("create space dir: failed to mkdir space dir: [%s]", space)
+		} else {
+			log.Printf("create space dir: mkdir space dir: [%s] successfully.", space)
+		}
+	}
+	return userSpace, err
+}
+
+func cleanSpacename(s string) string {
+	// Remove any trailing space to avoid ending on -
+	s = strings.Trim(s, " ")
+	s = strings.Replace(s, "..", "", -1)
+
+	// Replace all characters which not in the list `0-9A-Za-z@_\-.` with a dash
+	s = invalidFilenameChars.ReplaceAllString(s, "-")
+
+	// Remove any multiple dashes caused by replacements above
+	s = dashes.ReplaceAllString(s, "-")
+	return s
+}
