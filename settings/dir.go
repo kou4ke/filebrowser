@@ -97,7 +97,7 @@ func (settings *Settings) MakeSpaceDir(userSpace, serverRoot string) (string, er
 	}
 
 	// Create default user dir
-	spaceBase := settings.Defaults.Space + string(os.PathSeparator) + "spaces"
+	spaceBase := settings.Defaults.Scope + string(os.PathSeparator) + "spaces"
 	space := spaceBase + string(os.PathSeparator) + spacename
 	dirCheck, err := afs.DirExists(space)
 	if dirCheck {
