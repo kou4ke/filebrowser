@@ -149,8 +149,17 @@ var signupHandler = func(w http.ResponseWriter, r *http.Request, d *data) (int, 
 		log.Printf("create user: failed to mkdir user home dir: [%s]", userHome)
 		return http.StatusInternalServerError, err
 	}
-	user.Scope = userHome
-	log.Printf("new user: %s, home dir: [%s], email: [%s], spacename [%s].", user.Username, userHome, user.Email, user.Spacename)
+
+	userSpace, err := d.settings.MakeSpaceDir(user.Space, d.server.Root)
+	if err != nil {
+		log.Printf("create user: failed to mkdir space dir: [%s]", userSpace)
+		return http.StatusInternalServerError, err
+	}
+	if userSpace != "" {
+		user.Scope = userHome
+	} else {
+		user.Scope = userSpace
+	}
 
 	err = d.store.Users.Save(user)
 	if err == errors.ErrExist {
