@@ -110,7 +110,7 @@ func (settings *Settings) MakeSpaceDir(userSpace, serverRoot string) (string, er
 			log.Printf("create space dir: mkdir space dir: [%s] successfully.", space)
 		}
 	}
-	return userSpace, err
+	return space, err
 }
 
 func cleanSpacename(s string) string {
