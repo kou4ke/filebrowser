@@ -21,8 +21,8 @@
     </p>
 
     <p v-if="!isDefault">
-      <label for="spacename">{{ $t('settings.spacename') }}</label>
-      <input class="input input--block" type="text" v-model="user.spacename" id="spacename">
+      <label for="space">{{ $t('settings.spacename') }}</label>
+      <input class="input input--block" type="text" v-model="user.space" id="space">
     </p>
 
     <p>

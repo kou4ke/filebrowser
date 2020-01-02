@@ -21,7 +21,7 @@
           <td>{{ user.email }}</td>
           <td><i v-if="user.perm.admin" class="material-icons">done</i><i v-else class="material-icons">close</i></td>
           <td>{{ user.scope }}</td>
-          <td>{{ user.spacename }}</td>
+          <td>{{ user.space }}</td>
           <td class="small">
             <router-link :to="'/settings/users/' + user.id"><i class="material-icons">mode_edit</i></router-link>
           </td>

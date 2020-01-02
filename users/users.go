@@ -34,7 +34,7 @@ type User struct {
 	Fs           afero.Fs      `json:"-" yaml:"-"`
 	Rules        []rules.Rule  `json:"rules"`
 	Email        string        `json:"email"`
-	Spacename    string        `json:"spacename"`
+	Space        string        `json:"space"`
 }
 
 // GetRules implements rules.Provider.
@@ -51,7 +51,7 @@ var checkableFields = []string{
 	"Sorting",
 	"Rules",
 	"Email",
-	"Spacename",
+	"Space",
 }
 
 // Clean cleans up a user and verifies if all its fields
