@@ -78,7 +78,7 @@ func cleanUsername(s string) string {
 func (settings *Settings) MakeSpaceDir(userSpace, serverRoot string) (string, error) {
 	var err error
 	userSpace = strings.TrimSpace(userSpace)
-	if userSpace == "" || userSpace == "./" {
+	if userSpace == "./" {
 		userSpace = "."
 	}
 
