@@ -41,6 +41,7 @@ options you want to change.`,
 
 		defaults := settings.UserDefaults{
 			Scope:    user.Scope,
+			Space:    user.Space,
 			Locale:   user.Locale,
 			ViewMode: user.ViewMode,
 			Perm:     user.Perm,
@@ -49,6 +50,7 @@ options you want to change.`,
 		}
 		getUserDefaults(flags, &defaults, false)
 		user.Scope = defaults.Scope
+		user.Space = defaults.Space
 		user.Locale = defaults.Locale
 		user.ViewMode = defaults.ViewMode
 		user.Perm = defaults.Perm
