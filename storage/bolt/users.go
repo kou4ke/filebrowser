@@ -2,6 +2,7 @@ package bolt
 
 import (
 	"reflect"
+	"log"
 
 	"github.com/asdine/storm"
 	"github.com/filebrowser/filebrowser/v2/errors"
@@ -63,6 +64,7 @@ func (st usersBackend) Update(user *users.User, fields ...string) error {
 		}
 	}
 
+	log.Printf("user update: user [%s], data [%v]", user.Username, user)
 	return nil
 }
 
@@ -71,6 +73,7 @@ func (st usersBackend) Save(user *users.User) error {
 	if err == storm.ErrAlreadyExists {
 		return errors.ErrExist
 	}
+	log.Printf("user save: user [%s], data [%v]", user.Username, user)
 	return err
 }
 
