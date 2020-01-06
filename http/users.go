@@ -137,7 +137,7 @@ var userPostHandler = withAdmin(func(w http.ResponseWriter, r *http.Request, d *
 	  req.Data.Scope = userSpace
 	}
 
-	log.Printf("user: %s, home dir: [%s].", req.Data.Username, userHome)
+	log.Printf("user: %s, home dir: [%s], email: [%s], space: [%s].", req.Data.Username, userHome, req.data.email, userSpace)
 
 	err = d.store.Users.Save(req.Data)
 	if err != nil {
