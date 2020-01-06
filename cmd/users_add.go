@@ -11,7 +11,7 @@ func init() {
 }
 
 var usersAddCmd = &cobra.Command{
-	Use:   "add <username> <password> <email> <spacen>",
+	Use:   "add <username> <password> <email> <space>",
 	Short: "Create a new user",
 	Long:  `Create a new user and add it to the database.`,
 	Args:  cobra.ExactArgs(4),
