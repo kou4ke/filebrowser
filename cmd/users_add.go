@@ -44,11 +44,11 @@ var usersAddCmd = &cobra.Command{
 		userHome, err := s2.MakeUserDir(user.Username, user.Scope, servSettings.Root)
 		checkErr(err)
 
-		userSpace, err := s2.MakeSpaceDir(user.Space, servSettings.Root)
-		checkErr(err)
 		if user.Space == "" {
 			user.Scope = userHome
 		} else {
+			userSpace, err := s2.MakeSpaceDir(user.Space, servSettings.Root)
+			checkErr(err)
 			user.Scope = userSpace
 		}
 
